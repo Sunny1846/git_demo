@@ -12,6 +12,7 @@ typedef struct Node{
     struct Node* rightChild;
 }Node;
 
+#make new node
 Node* makeNode(int id){
     Node* p = (Node*)malloc(sizeof(Node));
     p->id = id;
@@ -20,6 +21,7 @@ Node* makeNode(int id){
     return p;
 }
 
+#build the bst
 Node* build(int start, int end){
     if(start > end) 
         return NULL;
@@ -40,6 +42,7 @@ Node* build(int start, int end){
     return r;
 }
 
+#print the post order
 void postOrder(Node* r){
     if(r == NULL) return;
     postOrder(r->leftChild);
